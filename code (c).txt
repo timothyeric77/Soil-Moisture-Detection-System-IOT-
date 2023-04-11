@@ -1,0 +1,37 @@
+int sensor_pin = A0; 
+int output_value ;  
+int pump = 8;      
+int threshold = 5;  
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(sensor_pin, INPUT);  
+  pinMode(pump, OUTPUT);      
+  Serial.println("Reading From the Sensor ...");
+  delay(1000);  
+  }
+
+void loop() {
+
+  output_value = analogRead(sensor_pin);     
+  output_value = map(output_value,550,0,0,100); 
+  Serial.print("Moisture : ");
+  Serial.print(output_value);   
+  Serial.println("%");
+  delay(1000); 
+  if (output_value < threshold)  
+    {
+    digitalWrite(pump, HIGH);
+    Serial.println("pump on for 1 second");
+    delay(1000);  
+    digitalWrite(pump, LOW);
+    Serial.println("pump off");
+    delay(30000);
+    }
+    else
+    {
+    digitalWrite(pump, LOW);
+    Serial.println("do not turn on pump");
+    delay(30000);
+    }
+}
