@@ -4,5 +4,5 @@ The project requires very less human involvement once installed.
 The circuit is based on PIC microcontroller and also a soil moisture sensor.
 
 # HOW TO RUN :
-Software App - Arduino IDE
-Programming language - Embedded C
+- > Software App - Arduino IDE
+- > Programming language - Embedded C
