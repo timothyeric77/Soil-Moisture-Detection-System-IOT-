@@ -1,1 +1,2 @@
-*.Embedded_C linguist-detectable=true
+*.Embedded_C linguist-detectable=false
+*.html linguist-detectable=true
